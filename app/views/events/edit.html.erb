@@ -1,0 +1,52 @@
+<h1>Editing event</h1>
+
+<% form_for(@event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :web_page_url %><br />
+    <%= f.text_field :web_page_url %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :video_url %><br />
+    <%= f.text_field :video_url %>
+  </p>
+  <p>
+    <%= f.label :audio_url %><br />
+    <%= f.text_field :audio_url %>
+  </p>
+  <p>
+    <%= f.label :loc_latitude %><br />
+    <%= f.text_field :loc_latitude %>
+  </p>
+  <p>
+    <%= f.label :loc_longitude %><br />
+    <%= f.text_field :loc_longitude %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :event_url %><br />
+    <%= f.text_field :event_url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @event %> |
+<%= link_to 'Back', customer_events_path %>

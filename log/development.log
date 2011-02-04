@@ -1,0 +1,561 @@
+  [4;36;1mSQL (15.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (20.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (8.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20110204214956)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "password" varchar(255), "email" varchar(255), "mobile" varchar(255), "address" varchar(255), "contract" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110204214956')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-04 13:50:53) [GET]
+  [4;36;1mCustomer Load (3.3ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 66ms (View: 47, DB: 3) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#new (for 127.0.0.1 at 2011-02-04 13:52:14) [GET]
+Rendering template within layouts/customers
+Rendering customers/new
+Completed in 76ms (View: 56, DB: 0) | 200 OK [http://localhost/customers/new]
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2011-02-04 13:52:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"LvNB2RdGvl7Mq8ByuIpHma289UIa/2OW3pvXKTsLJTg=", "customer"=>{"address"=>"addr", "name"=>"aaa", "mobile"=>"1233423432432", "contract"=>"c1", "password"=>"aaa", "email"=>"aaa@gmail.co"}}
+  [4;35;1mCustomer Create (0.8ms)[0m   [0mINSERT INTO "customers" ("name", "address", "created_at", "updated_at", "mobile", "contract", "password", "email") VALUES('aaa', 'addr', '2011-02-04 21:52:44', '2011-02-04 21:52:44', '1233423432432', 'c1', 'aaa', 'aaa@gmail.co')[0m
+Redirected to http://localhost:3000/customers/1
+Completed in 49ms (DB: 1) | 302 Found [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2011-02-04 13:52:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (1.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 45ms (View: 19, DB: 1) | 200 OK [http://localhost/customers/1]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-04 13:52:48) [GET]
+  [4;35;1mCustomer Load (3.3ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 36ms (View: 17, DB: 3) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#edit (for 127.0.0.1 at 2011-02-04 13:52:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/edit
+Completed in 63ms (View: 40, DB: 1) | 200 OK [http://localhost/customers/1/edit]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-04 13:52:57) [GET]
+  [4;35;1mCustomer Load (1.1ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 64ms (View: 47, DB: 1) | 200 OK [http://localhost/customers]
+  [4;36;1mSQL (7.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20110204214956)
+Migrating to CreateEvents (20110204220808)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "web_page_url" varchar(255), "image_url" varchar(255), "video_url" varchar(255), "audio_url" varchar(255), "loc_latitude" decimal, "loc_longitude" decimal, "date" datetime, "contact" varchar(255), "price" decimal, "event_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110204220808')[0m
+Migrating to AddNumberOfHitsToEvents (20110204221135)
+  [4;35;1mSQL (7.5ms)[0m   [0mALTER TABLE "events" ADD "number_of_hits" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110204221135')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (12.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("events")[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:12:12) [GET]
+  [4;36;1mEvent Load (0.8ms)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 41ms (View: 19, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:12:15) [GET]
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `web_pag_url_before_type_cast' for #<Event:0xb674591c>) on line #8 of app/views/events/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :web_pag_url %><br />
+8:     <%= f.text_field :web_pag_url %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :image_url %><br />
+
+    app/views/events/new.html.erb:8
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (130.5ms)
+Rendered rescues/_request_and_response (3.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:16:59) [GET]
+  [4;35;1mEvent Load (0.7ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 35ms (View: 16, DB: 1) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:17:01) [GET]
+Rendering template within layouts/events
+Rendering events/new
+Completed in 137ms (View: 116, DB: 0) | 200 OK [http://localhost/events/new]
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20110204214956)
+Migrating to CreateEvents (20110204220808)
+Migrating to AddNumberOfHitsToEvents (20110204221135)
+Migrating to AddCustomerIdToEvents (20110204222907)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "events" ADD "customer_id" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110204222907')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mPRAGMA index_list("events")[0m
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-04 14:29:45) [GET]
+  [4;36;1mCustomer Load (1.5ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 96ms (View: 17, DB: 2) | 200 OK [http://localhost/customers]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:29:59) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mEvent Load (0.6ms)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+
+ActionView::TemplateError (undefined local variable or method `new_event_path' for #<ActionView::Base:0xb662d91c>) on line #38 of app/views/events/index.html.erb:
+35: 
+36: <br />
+37: 
+38: <%= link_to 'New event', new_event_path %>
+
+    app/views/events/index.html.erb:38
+    app/controllers/events_controller.rb:7:in `index'
+
+Rendered rescues/_trace (163.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:39:14) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 86ms (View: 17, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:39:18) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `events_path' for #<ActionView::Base:0xb6785328>) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for(@event) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (92.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:40:00) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `events_path' for #<ActionView::Base:0xb65d5b7c>) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for(@event) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (98.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:40:06) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `events_path' for #<ActionView::Base:0xb66b6ac8>) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for(@event) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (99.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:41:21) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.9ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 55ms (View: 16, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:41:23) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `events_path' for #<ActionView::Base:0xb67c9ac8>) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for(@event) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (90.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:42:43) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.3ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 71ms (View: 12, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:42:45) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `post' for nil:NilClass) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for([@comment.post,@event]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (98.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:43:20) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.5ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.1ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 42ms (View: 5, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:43:22) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `event' for nil:NilClass) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for([@customer.event,@event]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (178.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:48:26) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.7ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 40ms (View: 5, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:48:27) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.9ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+
+NoMethodError (undefined method `event=' for nil:NilClass):
+  app/controllers/events_controller.rb:28:in `new'
+
+Rendered rescues/_trace (66.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-04 14:49:38) [GET]
+  [4;35;1mCustomer Load (9.1ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 82ms (View: 33, DB: 9) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2011-02-04 14:49:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (0.7ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 35ms (View: 10, DB: 1) | 200 OK [http://localhost/customers/1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:49:46) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mCustomer Load (0.8ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Load (0.3ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 53ms (View: 4, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:49:48) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mCustomer Load (0.9ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+
+NoMethodError (undefined method `event=' for nil:NilClass):
+  app/controllers/events_controller.rb:28:in `new'
+
+Rendered rescues/_trace (82.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:51:50) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.5ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 43ms (View: 7, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:51:52) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+
+NoMethodError (undefined method `event=' for nil:NilClass):
+  app/controllers/events_controller.rb:28:in `new'
+
+Rendered rescues/_trace (67.3ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:53:30) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mCustomer Load (0.7ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 45ms (View: 5, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:53:32) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `event' for nil:NilClass) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for([@customer.event,@event]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:30:in `new'
+
+Rendered rescues/_trace (92.7ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:56:37) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (1.1ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+
+NoMethodError (undefined method `event=' for nil:NilClass):
+  app/controllers/events_controller.rb:28:in `new'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 14:57:33) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mCustomer Load (0.8ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;36;1mEvent Load (0.4ms)[0m   [0;1mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 75ms (View: 39, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:57:35) [GET]
+  Parameters: {"customer_id"=>"1"}
+Rendering template within layouts/events
+Rendering events/new
+
+ActionView::TemplateError (undefined method `event' for nil:NilClass) on line #3 of app/views/events/new.html.erb:
+1: <h1>New event</h1>
+2: 
+3: <% form_for([@customer.event,@event]) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/events/new.html.erb:3
+    app/controllers/events_controller.rb:29:in `new'
+
+Rendered rescues/_trace (92.7ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 14:58:05) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;35;1mCustomer Load (0.8ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+
+NoMethodError (undefined method `event=' for nil:NilClass):
+  app/controllers/events_controller.rb:28:in `new'
+
+Rendered rescues/_trace (64.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EventsController#index (for 127.0.0.1 at 2011-02-04 15:01:09) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (1.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/index
+  [4;35;1mEvent Load (0.4ms)[0m   [0mSELECT * FROM "events" WHERE ("events".customer_id = 1) [0m
+Completed in 71ms (View: 13, DB: 1) | 200 OK [http://localhost/customers/1/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2011-02-04 15:01:11) [GET]
+  Parameters: {"customer_id"=>"1"}
+  [4;36;1mCustomer Load (0.8ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/new
+Completed in 254ms (View: 184, DB: 1) | 200 OK [http://localhost/customers/1/events/new]

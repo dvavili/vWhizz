@@ -1,0 +1,53 @@
+<p>
+  <b>Web page url:</b>
+  <%=h @event.web_page_url %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @event.image_url %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%=h @event.video_url %>
+</p>
+
+<p>
+  <b>Audio url:</b>
+  <%=h @event.audio_url %>
+</p>
+
+<p>
+  <b>Loc latitude:</b>
+  <%=h @event.loc_latitude %>
+</p>
+
+<p>
+  <b>Loc longitude:</b>
+  <%=h @event.loc_longitude %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @event.date %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @event.contact %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @event.price %>
+</p>
+
+<p>
+  <b>Event url:</b>
+  <%=h @event.event_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
