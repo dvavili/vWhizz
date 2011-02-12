@@ -559,3 +559,477 @@ Processing EventsController#new (for 127.0.0.1 at 2011-02-04 15:01:11) [GET]
 Rendering template within layouts/events
 Rendering events/new
 Completed in 254ms (View: 184, DB: 1) | 200 OK [http://localhost/customers/1/events/new]
+  [4;36;1mSQL (2.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20110204214956)
+Migrating to CreateEvents (20110204220808)
+Migrating to AddNumberOfHitsToEvents (20110204221135)
+Migrating to AddCustomerIdToEvents (20110204222907)
+Migrating to DeviseCreateUsers (20110212210754)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110212210754')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("customers")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("events")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:17:35) [GET]
+
+ActionController::MethodNotAllowed (Only post, put, and delete requests are allowed.):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (100.5ms)
+Rendered rescues/_request_and_response (5.1ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:17:43) [GET]
+Rendering registrations/new
+Rendered shared/_devise_links (10.1ms)
+Completed in 167ms (View: 118, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2011-02-12 13:18:02) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"8G6DPeMsKMhjUxSsA64LHhDSd2pbuGgugKX8ewppau0=", "user"=>{"password_confirmation"=>"divya", "password"=>"divya", "email"=>"divyasslv@gmail.com"}}
+  [4;36;1mUser Load (7.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+Rendering registrations/new
+Rendered shared/_devise_links (2.1ms)
+Completed in 380ms (View: 73, DB: 8) | 200 OK [http://localhost/users]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2011-02-12 13:18:26) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"8G6DPeMsKMhjUxSsA64LHhDSd2pbuGgugKX8ewppau0=", "user"=>{"password_confirmation"=>"divyav", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;35;1mUser Load (4.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (1.5ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "created_at", "last_sign_in_ip", "updated_at", "last_sign_in_at", "sign_in_count", "password_salt", "reset_password_token", "remember_token", "current_sign_in_ip", "remember_created_at", "current_sign_in_at", "email") VALUES('202ecf80e76f3dce142e544bb1a1049c3bba9195', '2011-02-12 21:18:26', NULL, '2011-02-12 21:18:26', NULL, 0, '-Xchkw20Bb-Ckilp9u1J', NULL, NULL, NULL, NULL, NULL, 'divyasslv@gmail.com')[0m
+  [4;35;1mUser Update (1.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-02-12 21:18:26', "sign_in_count" = 1, "current_sign_in_at" = '2011-02-12 21:18:26', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2011-02-12 21:18:26', "last_sign_in_ip" = '127.0.0.1' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 172ms (DB: 7) | 302 Found [http://localhost/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:20:14) [GET]
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 166ms (DB: 2) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:20:22) [GET]
+  [4;35;1mUser Load (2.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 38ms (DB: 3) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:20:32) [GET]
+  [4;36;1mUser Load (5.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 40ms (DB: 5) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:21:30) [GET]
+  [4;36;1mUser Load (4.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 55ms (DB: 5) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:23:19) [GET]
+
+ActionController::MethodNotAllowed (Only post, put, and delete requests are allowed.):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (159.5ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:23:23) [GET]
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 35ms (DB: 2) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:23:32) [GET]
+  [4;36;1mCustomer Load (2.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 188ms (View: 114, DB: 2) | 200 OK [http://localhost/customers]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:24:21) [GET]
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 62ms (DB: 5) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:25:04) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (3.8ms)
+Completed in 123ms (View: 76, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:25:17) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"8G6DPeMsKMhjUxSsA64LHhDSd2pbuGgugKX8ewppau0=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;35;1mUser Load (3.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-02-12 21:25:17', "sign_in_count" = 2, "current_sign_in_at" = '2011-02-12 21:25:17' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 172ms (DB: 4) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:28:00) [GET]
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 85ms (DB: 4) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:29:51) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (1.2ms)
+Completed in 59ms (View: 31, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:29:58) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"8G6DPeMsKMhjUxSsA64LHhDSd2pbuGgugKX8ewppau0=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;35;1mUser Load (4.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (1.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-02-12 21:29:58', "sign_in_count" = 3, "current_sign_in_at" = '2011-02-12 21:29:58', "last_sign_in_at" = '2011-02-12 21:25:17' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 91ms (DB: 6) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:31:02) [GET]
+  [4;36;1mUser Load (3.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 35ms (DB: 4) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:31:07) [GET]
+  [4;35;1mUser Load (3.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 43ms (DB: 3) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:31:15) [GET]
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 95ms (DB: 2) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:31:19) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (5.0ms)
+Completed in 185ms (View: 148, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:31:30) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"8G6DPeMsKMhjUxSsA64LHhDSd2pbuGgugKX8ewppau0=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;36;1mUser Load (2.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Update (1.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-02-12 21:31:30', "sign_in_count" = 4, "current_sign_in_at" = '2011-02-12 21:31:30', "last_sign_in_at" = '2011-02-12 21:29:58' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 169ms (DB: 4) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:31:38) [GET]
+  [4;36;1mCustomer Load (2.2ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 96ms (View: 57, DB: 2) | 200 OK [http://localhost/customers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:35:45) [GET]
+
+ActionController::RoutingError (No route matches "/users/sign_out" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:35:48) [GET]
+
+ActionController::RoutingError (No route matches "/users/sign_out" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:36:07) [GET]
+  [4;36;1mCustomer Load (10.4ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 209ms (View: 154, DB: 10) | 200 OK [http://localhost/customers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:36:13) [GET]
+
+ActionController::RoutingError (No route matches "/users/sign_up" with {:method=>:get}):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:36:53) [GET]
+  [4;36;1mUser Load (6.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_authentication] rendered_or_redirected.
+Completed in 104ms (DB: 6) | 302 Found [http://localhost/users/sign_up]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:37:00) [GET]
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 122ms (DB: 10) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:37:05) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (5.7ms)
+Completed in 137ms (View: 86, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:45:45) [GET]
+  [4;36;1mCustomer Load (2.7ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 181ms (View: 118, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:45:56) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (3.4ms)
+Completed in 105ms (View: 69, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:46:08) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"pb11v7H9F9K2+z+TGQ4b/lCl7BSoS6eEMYO3kya/jKA=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;35;1mUser Load (4.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-02-12 21:46:09', "sign_in_count" = 5, "current_sign_in_at" = '2011-02-12 21:46:09', "last_sign_in_at" = '2011-02-12 21:31:30' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 252ms (DB: 5) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:46:09) [GET]
+  [4;35;1mCustomer Load (1.3ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 74ms (View: 45, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:46:47) [GET]
+  [4;36;1mUser Load (2.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (2.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 98ms (DB: 5) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:46:48) [GET]
+  [4;36;1mCustomer Load (2.3ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 81ms (View: 36, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:46:54) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (2.3ms)
+Completed in 109ms (View: 49, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:47:04) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"pb11v7H9F9K2+z+TGQ4b/lCl7BSoS6eEMYO3kya/jKA=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;35;1mUser Load (6.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2011-02-12 21:47:04', "sign_in_count" = 6, "current_sign_in_at" = '2011-02-12 21:47:04', "last_sign_in_at" = '2011-02-12 21:46:09' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 118ms (DB: 7) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:47:04) [GET]
+  [4;35;1mCustomer Load (2.7ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 107ms (View: 55, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:47:15) [GET]
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 62ms (DB: 3) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:47:16) [GET]
+  [4;36;1mCustomer Load (2.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 81ms (View: 26, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:50:23) [GET]
+
+NameError (uninitialized constant Users):
+  warden (0.10.7) lib/warden/manager.rb:35:in `call'
+  warden (0.10.7) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.7) lib/warden/manager.rb:34:in `call'
+
+Rendered rescues/_trace (150.2ms)
+Rendered rescues/_request_and_response (4.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:57:59) [GET]
+  [4;36;1mCustomer Load (3.3ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 177ms (View: 125, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing RegistrationsController#new (for 127.0.0.1 at 2011-02-12 13:58:10) [GET]
+Rendering registrations/new
+Rendered shared/_devise_links (4.8ms)
+Completed in 134ms (View: 79, DB: 0) | 200 OK [http://localhost/users/sign_up]
+
+
+Processing RegistrationsController#create (for 127.0.0.1 at 2011-02-12 13:58:31) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"B/unfPD6f1Bk77aSd1CcJVzZRrtF8sdxcwAhH7B79cE=", "user"=>{"password_confirmation"=>"divyav", "password"=>"divyav", "email"=>"divyasslv@yahoo.com"}}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'divyasslv@yahoo.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("encrypted_password", "created_at", "last_sign_in_ip", "updated_at", "last_sign_in_at", "sign_in_count", "password_salt", "reset_password_token", "remember_token", "current_sign_in_ip", "remember_created_at", "current_sign_in_at", "email") VALUES('5f19c7e344a180ee99596c25036d2b042a21c817', '2011-02-12 21:58:31', NULL, '2011-02-12 21:58:31', NULL, 0, 'qU5qK-NClXgELo4KWP9E', NULL, NULL, NULL, NULL, NULL, 'divyasslv@yahoo.com')[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-02-12 21:58:31', "sign_in_count" = 1, "current_sign_in_at" = '2011-02-12 21:58:31', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2011-02-12 21:58:31', "last_sign_in_ip" = '127.0.0.1' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 195ms (DB: 2) | 302 Found [http://localhost/users]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:58:31) [GET]
+  [4;36;1mCustomer Load (9.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 221ms (View: 73, DB: 9) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:58:41) [GET]
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 85ms (DB: 3) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:58:41) [GET]
+  [4;35;1mCustomer Load (0.8ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 57ms (View: 23, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:58:45) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (1.2ms)
+Completed in 95ms (View: 50, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:58:54) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"B/unfPD6f1Bk77aSd1CcJVzZRrtF8sdxcwAhH7B79cE=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@yahoo.com"}}
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@yahoo.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-02-12 21:58:54', "sign_in_count" = 2, "current_sign_in_at" = '2011-02-12 21:58:54' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 104ms (DB: 4) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:58:54) [GET]
+  [4;36;1mCustomer Load (2.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 140ms (View: 113, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-02-12 13:59:01) [GET]
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Redirected to http://localhost:3000/
+Completed in 69ms (DB: 4) | 302 Found [http://localhost/users/sign_out]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:59:02) [GET]
+  [4;35;1mCustomer Load (2.7ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 65ms (View: 31, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-02-12 13:59:06) [GET]
+Rendering sessions/new
+Rendered shared/_devise_links (1.3ms)
+Completed in 96ms (View: 44, DB: 0) | 200 OK [http://localhost/users/sign_in]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-02-12 13:59:12) [POST]
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"B/unfPD6f1Bk77aSd1CcJVzZRrtF8sdxcwAhH7B79cE=", "user"=>{"remember_me"=>"0", "password"=>"divyav", "email"=>"divyasslv@gmail.com"}}
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'divyasslv@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE "users" SET "updated_at" = '2011-02-12 21:59:12', "sign_in_count" = 7, "current_sign_in_at" = '2011-02-12 21:59:12', "last_sign_in_at" = '2011-02-12 21:47:04' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 92ms (DB: 3) | 302 Found [http://localhost/users/sign_in]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2011-02-12 13:59:12) [GET]
+  [4;36;1mCustomer Load (1.4ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 63ms (View: 39, DB: 1) | 200 OK [http://localhost/]
