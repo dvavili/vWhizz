@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 15.megabytes
   validates_attachment_content_type :photo, :content_type => [ 'image/jpeg','image/png']
   
-  def self.find_all_events 
-    Events.find(:all, :order=>"date desc", :conditions=>['date > ?',Date.today]) 
+  function get_all_events do
+    
   end
 end
