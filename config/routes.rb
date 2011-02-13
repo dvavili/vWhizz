@@ -1,13 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
-
+     map.connect 'customers/:customer_id/events/create_event',:controller => 'events', :action => 'create_event'
 
   map.resources :customers, :has_many => [:events]
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
